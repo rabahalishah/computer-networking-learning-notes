@@ -1,5 +1,5 @@
 # Computer Networking Full Course
-**************Introduction to computer network & OSI model.
+# Introduction to computer network & OSI model.
 The main purpose of Computer network is to share the data. The data can be share once the connection is established. But the data which has sent from the sender and received by the receiver is in the same format as it supposed to be? Or receiver is being able to understand what does that shared data means? All these things are done by a protocol which is running on the both side. On sender and on receiver as well. 
 
 Example:
@@ -599,3 +599,48 @@ it will check the IP address of pc5 in its cache first. If it will not be there 
 
 
 **NOTE:** DLLA are nothing  but mac address of your devices. In Data link layer physical address is done which is assigning Mac address to the frames so that they reach the right device. and remember mac address is not of your computer its of components of your computer your bluetooth and wifi can have different mac addresses. Mac stands for media access control. It is unique identifier for you device.
+
+
+---------------------------------------------
+# IP, Subnet, Private Subnet, Public Subnet:
+Since we all know IP are the unique identifier. Used to distinguish between devices/resources in a network.
+
+## Why do we need of Subnet:
+Let say you have an office and you have a single network. When different employees are gonna attach with the same network. So if anyone of the employee is exposed to a malicious website then Hacker will have access to his device. Since that person and whole office is connceted wuth the same network. So your whole network and data can be breached all devices can be access. Just to avoid such security threat. we use Subnet. We divide our network into subnetworks.
+
+Let say we have department that contains sensitive information. So we will keep that department in a separate subnet and rest in the other subnet. In this way, we can separate our sensitive information. And in other subnets if there is a security breach then no issue. On the devices in that particular subnet are gonna compromised not all.
+
+### Private Subnet
+The subnet that is only accessible within the network.
+
+Generally, IP addresses start with 192, 172 or 10 are private IP addresses
+### Public Private Subnet:
+The subnet that is exposed to internet.
+
+# CIDR (Class Inter Domain Routing):
+CIDR is used to calculate the size of the network by the number of IP address that a particular range of CIDR can provide.
+So, This means If I want to know the size of my network or virtual network I can calculate it by its number of IP addresses.
+
+Since we all know an IP address looks like this: 192.168.2.1
+we represent them in decimal but in actual they are in octat such as 11111111.00000000.00000000.00000000 = 255.0.0.0
+
+# How to calculate CIDR:
+since there are 4 digits and each digit is of 8 bit. So 4*8=32
+so let say you want only 2 IP address in a subnet then you are gonna do this:
+192.167.9.0/31
+
+here 32-31=1
+No. of IP addresses = 2^1 = 2
+
+here 192.167.9 are gonna remain constant only last 0 is gonna vary.
+
+**NOTE: If no. of IP addresses required are greater than 256 then we are going to vary more than one digit otherwise only the last digit of the IP will vary, and the rest will remain the same.**
+
+so smaller the number after /,  greater the number of IP addresses will be.
+
+Example:
+192.167.9.0/16
+
+so, 
+32-16=16
+No. of IP addresses = 2^16 = 65536
