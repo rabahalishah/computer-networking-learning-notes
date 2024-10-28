@@ -256,7 +256,27 @@ Physical Layer
 "ATN DP"
 TCP/IP supports both Client-server architechture (Where one server and several clients are sending request) and peer to peer (users are sending request to each other e.g chat app)
 
+# OSI Model Top View:
+![image](https://github.com/user-attachments/assets/142b4a89-c9f3-453b-83cc-f9cfbf56f183)
+
+Before OSI Model there are two things that happen first. If any one of the thing get fails OSI Model layers won't be generated.
+1) DNS Resolution (Is there any IP address exists for the request URL?)
+2) TCP/IP Handshake (3 way, 2 way, 4 way handshake) (Hi-syn, Ack-Syn, Ack)
+
+L7 - Application - HTTP/FTP Request got initiated
+L6 - Presentation Layer - Encryption
+L5 - Session Layer - Browser Session is maintained
+L4 - Transport / Segmentation Layer - Data Segmentation or Data Packets And Which Protocol to use TCP/UDP
+L3 - Networking Layer / Router - Choosing the shortest path, hopping from router to router.
+L2 - Data Link Layer (Frames (MAC)) - Switches do not understand IP addresses so in each data packet we put MAC address as well along with the source and destination IP. Switches uses frames (MAC to identify the which component of the 
+				      device is targeted
+L1 - Physical Layer - optical fiber etc.
+
+### TCP-IP Model
+Since Layer 7, 6, and 5 are deal by the browser only. So, in TCP/IP Model we combine them and called it as 5 layer model.
+
 ***************Deep dive into the layers
+
 Application layer:
 
 it is a layer where users interact. Such as interact via UI of an application to chat etc.
